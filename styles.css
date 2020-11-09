@@ -1,0 +1,10 @@
+.hide {
+  display: none !important;
+}
+
+
+
+.results{
+    display: flex;
+    flex-direction: column;
+}
