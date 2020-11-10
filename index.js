@@ -18,10 +18,12 @@ function search() {
       console.log(body);
       for (let i = 0; i < body.length; i++) {
         const link = document.createElement("a");
-        link.href = `/company.html?symbol=${body[i].symbol}`;
+        link.href = `/js-project-2-Barry992/company.html?symbol=${body[i].symbol}`;
         link.innerHTML = `${body[i].name}(${body[i].symbol}) `;
+        link.setAttribute("target", "_blank");
 
         result.appendChild(link);
+        
       }
     });
 }

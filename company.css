@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+}
+image {
+  height: 10px;
+  width: 10px;
+}
+.percent{
+    color: aquamarine;
+}
