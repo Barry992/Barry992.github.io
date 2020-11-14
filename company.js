@@ -8,6 +8,7 @@ const description = document.getElementById("description");
 const searchParams = new URLSearchParams(window.location.search);
 const symbol = searchParams.get("symbol");
 
+
 // console.log("symbol", symbol);
 
 // call api with the value of symbol
