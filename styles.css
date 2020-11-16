@@ -13,10 +13,16 @@
 .results {
   display: flex;
   flex-direction: column;
+  margin-left: 150px;
+}
+.results > a {
+  /* border: 1px solid lightslategray; */
+  min-height:100px ;
 }
 
 body {
   margin: 20px;
+  background-image: url("/js-project-2-Barry992/favicon.ico");
 }
 
 .marquee {
