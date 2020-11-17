@@ -28,9 +28,11 @@
     <script src="/js-project-2-Barry992/searchResult.js"></script>
     <script src="/js-project-2-Barry992/searchForm.js"></script>
     <script>
-      const form = new SearchForm(document.getElementById("form"));
-      const results = new SearchResult(document.getElementById("result"));
-      form.onSearch((data) => results.renderResults(data));
+      (function () {
+        const form = new SearchForm(document.getElementById("form"));
+        const results = new SearchResult(document.getElementById("result"));
+        form.onSearch((data, value) => results.renderResults(data, value));
+      })();
     </script>
   </body>
 </html>

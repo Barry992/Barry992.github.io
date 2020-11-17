@@ -16,7 +16,7 @@ class SearchForm {
       );
       const data = await response.json();
       
-      this.callback(data);
+      this.callback(data,this.input.value);
   }
   render() {
     this.element.innerHTML = `

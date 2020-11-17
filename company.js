@@ -8,7 +8,6 @@ const description = document.getElementById("description");
 const searchParams = new URLSearchParams(window.location.search);
 const symbol = searchParams.get("symbol");
 
-
 // console.log("symbol", symbol);
 
 // call api with the value of symbol
@@ -30,14 +29,16 @@ function callWithSymbol() {
       companyName.innerHTML = data.companyName;
       let color;
       let percent = document.getElementById("percent");
-      percent=data.changesPercentage;
-      if( data.changesPercentage.includes(`-`)){
-        color = `red`;
-      }else{
-        color = `green`;
-      }
+      percent = data.changesPercentage;
+      if (data.changesPercentage.includes(`-`)) color = `red`;
+      else color = `green`;
 
-      stock.innerHTML = "Stock price :$" + data.price + `  <div style="color:${color} ">` + percent+`</div>`;
+      stock.innerHTML =
+        "Stock price :$" +
+        data.price +
+        `  <div style="color:${color} ">` +
+        percent +
+        `</div>`;
       description.innerHTML = data.description;
     });
 }
@@ -58,21 +59,17 @@ async function chart() {
   let newArr = await historyData();
   // console.log('newArr :>> ', newArr);
 
-
-console.log(typeof(  newArr.map(element => element.close)
-));
-  
-
+  console.log(typeof newArr.map((element) => element.close));
 
   var ctx = document.getElementById("myChart").getContext("2d");
   var myChart = new Chart(ctx, {
     type: "bar",
     data: {
-      labels: newArr.map(element => element.date),
+      labels: newArr.map((element) => element.date),
       datasets: [
         {
           label: "# of Votes",
-          data: newArr.map(element => element.close),
+          data: newArr.map((element) => element.close),
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
             "rgba(54, 162, 235, 0.2)",
